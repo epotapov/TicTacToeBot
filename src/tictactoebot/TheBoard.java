@@ -11,7 +11,7 @@ import java.awt.Color;
  *
  * @author Edward Potapov
  */
-public class TheBoard extends javax.swing.JFrame {
+public class TheBoard extends javax.swing.JFrame { //comment
     class turnon {
         boolean xturn;
         boolean oturn;
