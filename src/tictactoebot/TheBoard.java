@@ -348,45 +348,66 @@ public class TheBoard extends javax.swing.JFrame { //comment
             b1.setForeground(Color.green);
             b2.setForeground(Color.green);
             b3.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[1][0].xturn && board[1][1].xturn && board[1][2].xturn) || (board[1][0].oturn && board[1][1].oturn && board[1][2].oturn)) {
             b4.setForeground(Color.green);
             b5.setForeground(Color.green);
             b6.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[2][0].xturn && board[2][1].xturn && board[2][2].xturn) || (board[2][0].oturn && board[2][1].oturn && board[2][2].oturn)) {
             b7.setForeground(Color.green);
             b8.setForeground(Color.green);
             b9.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[0][0].xturn && board[1][0].xturn && board[2][0].xturn) || (board[0][0].oturn && board[1][0].oturn && board[2][0].oturn)) {
             b1.setForeground(Color.green);
             b4.setForeground(Color.green);
             b7.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[0][1].xturn && board[1][1].xturn && board[2][1].xturn) || (board[0][1].oturn && board[1][1].oturn && board[2][1].oturn)) {
             b2.setForeground(Color.green);
             b5.setForeground(Color.green);
             b8.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[0][2].xturn && board[1][2].xturn && board[2][2].xturn) || (board[0][2].oturn && board[1][2].oturn && board[2][2].oturn)) {
             b3.setForeground(Color.green);
             b6.setForeground(Color.green);
             b9.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[0][0].xturn && board[1][1].xturn && board[2][2].xturn) || (board[0][0].xturn && board[1][1].xturn && board[2][2].xturn)) {
             b1.setForeground(Color.green);
             b5.setForeground(Color.green);
             b9.setForeground(Color.green);
+            endgame(false);
         }
         if ((board[0][2].xturn && board[1][1].xturn && board[2][0].xturn) || (board[0][2].xturn && board[1][1].xturn && board[2][0].xturn)) {
             b3.setForeground(Color.green);
             b5.setForeground(Color.green);
             b7.setForeground(Color.green);
+            endgame(false);
         }
     }
     
+    void endgame(boolean endorstart) {
+            b1.setEnabled(endorstart);
+            b2.setEnabled(endorstart);
+            b3.setEnabled(endorstart);
+            b4.setEnabled(endorstart);
+            b5.setEnabled(endorstart);
+            b6.setEnabled(endorstart);
+            b7.setEnabled(endorstart);
+            b8.setEnabled(endorstart);
+            b9.setEnabled(endorstart);
+    }
+    
     private void RestartButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartButActionPerformed
+        endgame(true);
         turn = true;
         b1.setText("");
         b2.setText("");
