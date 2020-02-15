@@ -6,6 +6,7 @@
 package tictactoebot;
 
 import java.awt.Color;
+import javafx.geometry.Point2D; 
 
 /**
  *
@@ -20,7 +21,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
             oturn = false;
         }
     }
-    turnon[][] board = new turnon[3][3];
+    static turnon[][] board = new turnon[3][3];
     boolean turn = true;
     public TheBoard() {
         initComponents();
@@ -202,14 +203,19 @@ public class TheBoard extends javax.swing.JFrame { //comment
                                     .addComponent(b9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(b8, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        if(!(board[0][0].xturn || board[0][0].oturn)) {
+        board[0][0].xturn = true;
+        b1.setText("X");
+        b1.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[0][0].xturn || board[0][0].oturn)) {
             if(turn) {
                 board[0][0].xturn = true;
                 b1.setText("X");
@@ -220,11 +226,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        } */
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        if(!(board[0][1].xturn || board[0][1].oturn)) {
+        board[0][1].xturn = true;
+        b2.setText("X");
+        b2.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[0][1].xturn || board[0][1].oturn)) {
             if(turn) {
                 board[0][1].xturn = true;
                 b2.setText("X");
@@ -235,11 +246,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        if(!(board[0][2].xturn || board[0][2].oturn)) {
+        board[0][2].xturn = true;
+        b3.setText("X");
+        b3.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[0][2].xturn || board[0][2].oturn)) {
             if(turn) {
                 board[0][2].xturn = true;
                 b3.setText("X");
@@ -250,11 +266,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        if(!(board[1][0].xturn || board[1][0].oturn)) {
+        board[1][0].xturn = true;
+        b4.setText("X");
+        b4.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[1][0].xturn || board[1][0].oturn)) {
             if(turn) {
                 board[1][0].xturn = true;
                 b4.setText("X");
@@ -265,11 +286,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        if(!(board[1][1].xturn || board[1][1].oturn)) {
+        board[1][1].xturn = true;
+        b5.setText("X");
+        b5.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[1][1].xturn || board[1][1].oturn)) {
             if(turn) {
                 board[1][1].xturn = true;
                 b5.setText("X");
@@ -280,11 +306,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-       if(!(board[1][2].xturn || board[1][2].oturn)) {
+        board[1][2].xturn = true;
+        b6.setText("X");
+        b6.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[1][2].xturn || board[1][2].oturn)) {
             if(turn) {
                 board[1][2].xturn = true;
                 b6.setText("X");
@@ -295,11 +326,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-        if(!(board[2][0].xturn || board[2][0].oturn)) {
+        board[2][0].xturn = true;
+        b7.setText("X");
+        b7.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[2][0].xturn || board[2][0].oturn)) {
             if(turn) {
                 board[2][0].xturn = true;
                 b7.setText("X");
@@ -310,11 +346,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-        if(!(board[2][1].xturn || board[2][1].oturn)) {
+        board[2][1].xturn = true;
+        b8.setText("X");
+        b8.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[2][1].xturn || board[2][1].oturn)) {
             if(turn) {
                 board[2][1].xturn = true;
                 b8.setText("X");
@@ -325,11 +366,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
-        if(!(board[2][2].xturn || board[2][2].oturn)) {
+        board[2][2].xturn = true;
+        b9.setText("X");
+        b9.setEnabled(false);
+        outside(BasicBot.choosing());
+        winner();
+        /*if(!(board[2][2].xturn || board[2][2].oturn)) {
             if(turn) {
                 board[2][2].xturn = true;
                 b9.setText("X");
@@ -340,8 +386,56 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 turn = true;
             }
             winner();
-        }
+        }*/
     }//GEN-LAST:event_b9ActionPerformed
+    
+    void outside(Point2D p) {
+        if(p.getX() == 0 && p.getY() == 0) {
+            board[0][0].oturn = true;
+            b1.setText("O");
+            b1.setEnabled(false);
+        }
+        if(p.getX() == 0 && p.getY() == 1) {
+            board[0][1].oturn = true;
+            b2.setText("O");
+            b2.setEnabled(false);
+        }
+        if(p.getX() == 0 && p.getY() == 2) {
+            board[0][2].oturn = true;
+            b3.setText("O");
+            b3.setEnabled(false);
+        }
+        if(p.getX() == 1 && p.getY() == 0) {
+            board[1][0].oturn = true;
+            b4.setText("O");
+            b4.setEnabled(false);
+        }
+        if(p.getX() == 1 && p.getY() == 1) {
+            board[1][1].oturn = true;
+            b5.setText("O");
+            b5.setEnabled(false);
+        }
+        if(p.getX() == 1 && p.getY() == 2) {
+            board[1][2].oturn = true;
+            b6.setText("O");
+            b6.setEnabled(false);
+        }
+        if(p.getX() == 2 && p.getY() == 0) {
+            board[2][0].oturn = true;
+            b7.setText("O");
+            b7.setEnabled(false);
+        }
+        if(p.getX() == 2 && p.getY() == 1) {
+            board[2][1].oturn = true;
+            b8.setText("O");
+            b8.setEnabled(false);
+        }
+        if(p.getX() == 2 && p.getY() == 2) {
+            board[2][2].oturn = true;
+            b9.setText("O");
+            b9.setEnabled(false);
+        }
+    }
     
     void winner() {
         if ((board[0][0].xturn && board[0][1].xturn && board[0][2].xturn) || (board[0][0].oturn && board[0][1].oturn && board[0][2].oturn)) {
