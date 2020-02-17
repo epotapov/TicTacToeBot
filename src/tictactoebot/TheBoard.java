@@ -22,11 +22,13 @@ public class TheBoard extends javax.swing.JFrame { //comment
         }
     }
     static turnon[][] board = new turnon[3][3];
-    boolean turn = true;
+    boolean turn;
+    boolean won;
     public TheBoard() {
         initComponents();
         setResizable(false);
         turn = true;
+        won = false;
         b1.setText("");
         b2.setText("");
         b3.setText("");
@@ -84,6 +86,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b1.setFocusable(false);
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
@@ -91,6 +94,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b2.setFocusable(false);
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
@@ -98,6 +102,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b3.setFocusable(false);
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
@@ -105,6 +110,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b4.setFocusable(false);
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
@@ -112,6 +118,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b5.setFocusable(false);
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b5ActionPerformed(evt);
@@ -119,6 +126,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b6.setFocusable(false);
         b6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b6ActionPerformed(evt);
@@ -126,6 +134,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b7.setFocusable(false);
         b7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b7ActionPerformed(evt);
@@ -133,6 +142,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b8.setFocusable(false);
         b8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b8ActionPerformed(evt);
@@ -140,6 +150,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
         });
 
         b9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        b9.setFocusable(false);
         b9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b9ActionPerformed(evt);
@@ -213,8 +224,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[0][0].xturn = true;
         b1.setText("X");
         b1.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[0][0].xturn || board[0][0].oturn)) {
             if(turn) {
                 board[0][0].xturn = true;
@@ -233,8 +247,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[0][1].xturn = true;
         b2.setText("X");
         b2.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[0][1].xturn || board[0][1].oturn)) {
             if(turn) {
                 board[0][1].xturn = true;
@@ -253,8 +270,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[0][2].xturn = true;
         b3.setText("X");
         b3.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[0][2].xturn || board[0][2].oturn)) {
             if(turn) {
                 board[0][2].xturn = true;
@@ -273,8 +293,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[1][0].xturn = true;
         b4.setText("X");
         b4.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[1][0].xturn || board[1][0].oturn)) {
             if(turn) {
                 board[1][0].xturn = true;
@@ -293,8 +316,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[1][1].xturn = true;
         b5.setText("X");
         b5.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[1][1].xturn || board[1][1].oturn)) {
             if(turn) {
                 board[1][1].xturn = true;
@@ -313,8 +339,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[1][2].xturn = true;
         b6.setText("X");
         b6.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[1][2].xturn || board[1][2].oturn)) {
             if(turn) {
                 board[1][2].xturn = true;
@@ -333,8 +362,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[2][0].xturn = true;
         b7.setText("X");
         b7.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[2][0].xturn || board[2][0].oturn)) {
             if(turn) {
                 board[2][0].xturn = true;
@@ -353,8 +385,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[2][1].xturn = true;
         b8.setText("X");
         b8.setEnabled(false);
-        outside(BasicBot.choosing());
         winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[2][1].xturn || board[2][1].oturn)) {
             if(turn) {
                 board[2][1].xturn = true;
@@ -373,8 +408,10 @@ public class TheBoard extends javax.swing.JFrame { //comment
         board[2][2].xturn = true;
         b9.setText("X");
         b9.setEnabled(false);
-        outside(BasicBot.choosing());
-        winner();
+        if(!won) {
+            outside(BasicBot.choosing());
+            winner();
+        }
         /*if(!(board[2][2].xturn || board[2][2].oturn)) {
             if(turn) {
                 board[2][2].xturn = true;
@@ -489,6 +526,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
     }
     
     void endgame(boolean endorstart) {
+            won = true;
             b1.setEnabled(endorstart);
             b2.setEnabled(endorstart);
             b3.setEnabled(endorstart);
@@ -503,6 +541,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
     private void RestartButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartButActionPerformed
         endgame(true);
         turn = true;
+        won = false;
         b1.setText("");
         b2.setText("");
         b3.setText("");
