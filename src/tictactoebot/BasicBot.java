@@ -19,6 +19,7 @@ public class BasicBot {
         sections (ArrayList<TheBoard.turnon> one, ArrayList<Point2D> two) {
             int xnumb = 0;
             int onumb = 0;
+            
             for(int i = 0; i < one.size(); i++){
                 if(one.get(i).xturn)
                     xnumb++;
@@ -32,6 +33,7 @@ public class BasicBot {
                 xwellness = xnumb;
                 owellness = onumb;
             }
+            
         }
     }
     public static Point2D choosing () {
