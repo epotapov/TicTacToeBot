@@ -427,6 +427,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
     }//GEN-LAST:event_b9ActionPerformed
     
     void outside(Point2D p) {
+        if(p == null) //quick fix 
+            return;
         if(p.getX() == 0 && p.getY() == 0) {
             board[0][0].oturn = true;
             b1.setText("O");

@@ -16,10 +16,10 @@ public class BasicBot {
     static class sections {
         int xwellness;
         int owellness;
+        Point2D location;
         sections (TheBoard.turnon[] one, Point2D[] two) {
             int xnumb = 0;
             int onumb = 0;
-            Point2D location;
             ArrayList<Point2D> locations = new ArrayList<Point2D>();
             for(int i = 0; i < one.length; i++){
                 if(one[i].xturn)
@@ -49,7 +49,7 @@ public class BasicBot {
             }
         }
     }
-    public static Point2D choosing () {
+    public static Point2D choosing () { //rough around the edges kind of bot/logic could improve 
         Random r = new Random();
         TheBoard.turnon[][] temp = TheBoard.board;
         ArrayList<Point2D> num = new ArrayList<Point2D>();
@@ -63,8 +63,27 @@ public class BasicBot {
         choose.add(new sections(new TheBoard.turnon[]{temp[0][0],temp[1][1],temp[2][2]}, new Point2D[]{new Point2D(0,0), new Point2D(1,1), new Point2D(2,2)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[0][2],temp[1][1],temp[2][0]}, new Point2D[]{new Point2D(0,2), new Point2D(1,1), new Point2D(2,0)}));
         
-        for(sections s :choose) {
+        int iXwell = 0;
+        int iX = 3;
+        int iOwell = 0;
+        int iO = 3;
+        for(int i = 0; i < 8; i++) {
+            if(choose.get(i).owellness > iOwell) {
+                iO = i;
+                iOwell = choose.get(i).owellness;
+            }
+            if(choose.get(i).xwellness > iXwell) {
+                iX = i;
+                iXwell = choose.get(i).xwellness;
+            }
         }
+        if(iXwell > iOwell || iXwell == iOwell) {
+            return choose.get(iX).location;
+        } else if(iOwell > iXwell) {
+            return choose.get(iO).location;
+        } 
+        return new Point2D(3,3);    
+        /* //random bot
         for(int row = 0; row  < 3; row++) {
             for(int col = 0; col < 3; col++) {
                 if(!temp[row][col].oturn && !temp[row][col].xturn) {
@@ -75,7 +94,7 @@ public class BasicBot {
         if (num.size() > 0)
             return num.get(r.nextInt(num.size()));
         else
-            return new Point2D(3,3);
+            return new Point2D(3,3); */
         
     }
 }
