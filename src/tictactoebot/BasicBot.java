@@ -37,11 +37,11 @@ public class BasicBot {
                 xwellness = xnumb;
                 owellness = onumb;
             }
-            if(xwellness > 0) {
+            if(xwellness > 0 && 0 != locations.size()) {
                 Random r = new Random();
                 location = locations.get(r.nextInt(locations.size()));
             }
-            if(owellness > 0) {
+            if(owellness > 0 && 0 != locations.size()) {
                 Random r = new Random();
                 location = locations.get(r.nextInt(locations.size()));
             } else if (xwellness + owellness == 3) {
@@ -57,7 +57,7 @@ public class BasicBot {
         choose.add(new sections(new TheBoard.turnon[]{temp[0][0],temp[0][1],temp[0][2]}, new Point2D[]{new Point2D(0,0), new Point2D(0,1), new Point2D(0,2)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[1][0],temp[1][1],temp[1][2]}, new Point2D[]{new Point2D(1,0), new Point2D(1,1), new Point2D(1,2)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[2][0],temp[2][1],temp[2][2]}, new Point2D[]{new Point2D(2,0), new Point2D(2,1), new Point2D(2,2)}));
-        choose.add(new sections(new TheBoard.turnon[]{temp[0][0],temp[1][0],temp[1][0]}, new Point2D[]{new Point2D(0,0), new Point2D(1,0), new Point2D(2,0)}));
+        choose.add(new sections(new TheBoard.turnon[]{temp[0][0],temp[1][0],temp[2][0]}, new Point2D[]{new Point2D(0,0), new Point2D(1,0), new Point2D(2,0)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[0][1],temp[1][1],temp[2][1]}, new Point2D[]{new Point2D(0,1), new Point2D(1,1), new Point2D(2,1)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[0][2],temp[1][2],temp[2][2]}, new Point2D[]{new Point2D(0,2), new Point2D(1,2), new Point2D(2,2)}));
         choose.add(new sections(new TheBoard.turnon[]{temp[0][0],temp[1][1],temp[2][2]}, new Point2D[]{new Point2D(0,0), new Point2D(1,1), new Point2D(2,2)}));
