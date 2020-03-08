@@ -77,12 +77,12 @@ public class BasicBot {
                 iXwell = choose.get(i).xwellness;
             }
         }
-        if(iXwell > iOwell || iXwell == iOwell) {
+        if(iXwell > iOwell || (iXwell == iOwell && iOwell != 2)) {
             return choose.get(iX).location;
-        } else if(iOwell > iXwell) {
+        } else if(iOwell > iXwell || iOwell == 2) {
             return choose.get(iO).location;
         } 
-        return new Point2D(3,3);    
+        return null;    
         /* //random bot
         for(int row = 0; row  < 3; row++) {
             for(int col = 0; col < 3; col++) {

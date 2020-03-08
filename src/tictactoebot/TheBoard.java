@@ -513,13 +513,13 @@ public class TheBoard extends javax.swing.JFrame { //comment
             b9.setForeground(Color.green);
             endgame(false);
         }
-        if ((board[0][0].xturn && board[1][1].xturn && board[2][2].xturn) || (board[0][0].xturn && board[1][1].xturn && board[2][2].xturn)) {
+        if ((board[0][0].xturn && board[1][1].xturn && board[2][2].xturn) || (board[0][0].oturn && board[1][1].oturn && board[2][2].oturn)) {
             b1.setForeground(Color.green);
             b5.setForeground(Color.green);
             b9.setForeground(Color.green);
             endgame(false);
         }
-        if ((board[0][2].xturn && board[1][1].xturn && board[2][0].xturn) || (board[0][2].xturn && board[1][1].xturn && board[2][0].xturn)) {
+        if ((board[0][2].xturn && board[1][1].xturn && board[2][0].xturn) || (board[0][2].oturn && board[1][1].oturn && board[2][0].oturn)) {
             b3.setForeground(Color.green);
             b5.setForeground(Color.green);
             b7.setForeground(Color.green);
