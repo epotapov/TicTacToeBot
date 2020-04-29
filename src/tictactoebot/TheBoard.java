@@ -38,11 +38,20 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setText("");
         b8.setText("");
         b9.setText("");
+        b1.setEnabled(false);
+        b2.setEnabled(false);
+        b3.setEnabled(false);
+        b4.setEnabled(false);
+        b5.setEnabled(false);
+        b6.setEnabled(false);
+        b7.setEnabled(false);
+        b8.setEnabled(false);
+        b9.setEnabled(false);
         b1.setForeground(Color.black);
         b2.setForeground(Color.black);
         b3.setForeground(Color.black);
         b4.setForeground(Color.black);
-        b5.setForeground(Color.black);
+        b5.setForeground(Color.black); //hello
         b6.setForeground(Color.black);
         b7.setForeground(Color.black);
         b8.setForeground(Color.black);
@@ -74,6 +83,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7 = new javax.swing.JButton();
         b8 = new javax.swing.JButton();
         b9 = new javax.swing.JButton();
+        BasicBotButton = new javax.swing.JButton();
+        MiniMaxButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TicTacToe");
@@ -157,6 +168,20 @@ public class TheBoard extends javax.swing.JFrame { //comment
             }
         });
 
+        BasicBotButton.setText("BasicAlgo");
+        BasicBotButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BasicBotButtonActionPerformed(evt);
+            }
+        });
+
+        MiniMaxButton.setText("MiniMax");
+        MiniMaxButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MiniMaxButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,7 +190,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(RestartBut))
+                        .addComponent(RestartBut)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BasicBotButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MiniMaxButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +223,10 @@ public class TheBoard extends javax.swing.JFrame { //comment
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(RestartBut)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RestartBut)
+                    .addComponent(BasicBotButton)
+                    .addComponent(MiniMaxButton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -553,6 +585,15 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setText("");
         b8.setText("");
         b9.setText("");
+        b1.setEnabled(true);
+        b2.setEnabled(true);
+        b3.setEnabled(true);
+        b4.setEnabled(true);
+        b5.setEnabled(true);
+        b6.setEnabled(true);
+        b7.setEnabled(true);
+        b8.setEnabled(true);
+        b9.setEnabled(true);
         b1.setForeground(Color.black);
         b2.setForeground(Color.black);
         b3.setForeground(Color.black);
@@ -568,6 +609,16 @@ public class TheBoard extends javax.swing.JFrame { //comment
             }
         }
     }//GEN-LAST:event_RestartButActionPerformed
+
+    private void BasicBotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasicBotButtonActionPerformed
+        BasicBotButton.setEnabled(false);
+        MiniMaxButton.setEnabled(true);
+    }//GEN-LAST:event_BasicBotButtonActionPerformed
+
+    private void MiniMaxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiniMaxButtonActionPerformed
+        BasicBotButton.setEnabled(true);
+        MiniMaxButton.setEnabled(false);
+    }//GEN-LAST:event_MiniMaxButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,6 +656,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BasicBotButton;
+    private javax.swing.JButton MiniMaxButton;
     private javax.swing.JButton RestartBut;
     private javax.swing.JButton b1;
     private javax.swing.JButton b2;
