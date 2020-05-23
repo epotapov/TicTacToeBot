@@ -83,18 +83,5 @@ public class BasicBot {
             return choose.get(iO).location;
         } 
         return null;    
-        /* //random bot
-        for(int row = 0; row  < 3; row++) {
-            for(int col = 0; col < 3; col++) {
-                if(!temp[row][col].oturn && !temp[row][col].xturn) {
-                    num.add(new Point2D(row,col));
-                }
-            }
-        }
-        if (num.size() > 0)
-            return num.get(r.nextInt(num.size()));
-        else
-            return new Point2D(3,3); */
-        
     }
 }

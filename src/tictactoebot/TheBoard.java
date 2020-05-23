@@ -24,6 +24,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
     static turnon[][] board = new turnon[3][3];
     boolean turn;
     boolean won;
+    boolean basicOrnot;
     public TheBoard() {
         initComponents();
         setResizable(false);
@@ -38,15 +39,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setText("");
         b8.setText("");
         b9.setText("");
-        b1.setEnabled(false);
-        b2.setEnabled(false);
-        b3.setEnabled(false);
-        b4.setEnabled(false);
-        b5.setEnabled(false);
-        b6.setEnabled(false);
-        b7.setEnabled(false);
-        b8.setEnabled(false);
-        b9.setEnabled(false);
+        BasicBotButton.setEnabled(false);
+        basicOrnot = true;
         b1.setForeground(Color.black);
         b2.setForeground(Color.black);
         b3.setForeground(Color.black);
@@ -258,7 +252,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b1.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[0][0].xturn || board[0][0].oturn)) {
@@ -281,7 +279,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b2.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[0][1].xturn || board[0][1].oturn)) {
@@ -304,7 +306,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b3.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[0][2].xturn || board[0][2].oturn)) {
@@ -327,7 +333,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b4.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[1][0].xturn || board[1][0].oturn)) {
@@ -350,7 +360,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b5.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[1][1].xturn || board[1][1].oturn)) {
@@ -373,7 +387,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b6.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[1][2].xturn || board[1][2].oturn)) {
@@ -396,7 +414,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[2][0].xturn || board[2][0].oturn)) {
@@ -419,7 +441,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b8.setEnabled(false);
         winner();
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[2][1].xturn || board[2][1].oturn)) {
@@ -441,7 +467,11 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b9.setText("X");
         b9.setEnabled(false);
         if(!won) {
-            outside(BasicBot.choosing());
+            if(basicOrnot) {
+                outside(BasicBot.choosing());
+            } else {
+                outside(Minimax.choosing());
+            }
             winner();
         }
         /*if(!(board[2][2].xturn || board[2][2].oturn)) {
@@ -613,11 +643,13 @@ public class TheBoard extends javax.swing.JFrame { //comment
     private void BasicBotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasicBotButtonActionPerformed
         BasicBotButton.setEnabled(false);
         MiniMaxButton.setEnabled(true);
+        basicOrnot = true;
     }//GEN-LAST:event_BasicBotButtonActionPerformed
 
     private void MiniMaxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiniMaxButtonActionPerformed
         BasicBotButton.setEnabled(true);
         MiniMaxButton.setEnabled(false);
+        basicOrnot = false;
     }//GEN-LAST:event_MiniMaxButtonActionPerformed
 
     /**
