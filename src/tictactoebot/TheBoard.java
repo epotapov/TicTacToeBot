@@ -39,8 +39,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setText("");
         b8.setText("");
         b9.setText("");
-        BasicBotButton.setEnabled(false);
-        basicOrnot = true;
+        MiniMaxButton.setEnabled(false);
+        basicOrnot = false;
         b1.setForeground(Color.black);
         b2.setForeground(Color.black);
         b3.setForeground(Color.black);
@@ -259,7 +259,7 @@ public class TheBoard extends javax.swing.JFrame { //comment
             }
             winner();
         }
-        /*if(!(board[0][0].xturn || board[0][0].oturn)) {
+        /*if(!(board[0][0].xturn || board[0][0].oturn)) { //for two players
             if(turn) {
                 board[0][0].xturn = true;
                 b1.setText("X");
@@ -536,6 +536,71 @@ public class TheBoard extends javax.swing.JFrame { //comment
             b9.setText("O");
             b9.setEnabled(false);
         }
+    }
+    
+    static Integer minimaxWinner(turnon[][] t) {
+        Integer rtype = null;
+        if ((t[0][0].xturn && t[0][1].xturn && t[0][2].xturn) || (t[0][0].oturn && t[0][1].oturn && t[0][2].oturn)) {
+            if(t[0][0].xturn)
+                rtype = -1;
+            if(t[0][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[1][0].xturn && t[1][1].xturn && t[1][2].xturn) || (t[1][0].oturn && t[1][1].oturn && t[1][2].oturn)) {
+            if(t[1][0].xturn)
+                rtype = -1;
+            if(t[1][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[2][0].xturn && t[2][1].xturn && t[2][2].xturn) || (t[2][0].oturn && t[2][1].oturn && t[2][2].oturn)) {
+            if(t[2][0].xturn)
+                rtype = -1;
+            if(t[2][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[0][0].xturn && t[1][0].xturn && t[2][0].xturn) || (t[0][0].oturn && t[1][0].oturn && t[2][0].oturn)) {
+            if(t[0][0].xturn)
+                rtype = -1;
+            if(t[0][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[0][1].xturn && t[1][1].xturn && t[2][1].xturn) || (t[0][1].oturn && t[1][1].oturn && t[2][1].oturn)) {
+            if(t[0][1].xturn)
+                rtype = -1;
+            if(t[0][1].oturn)
+                rtype = 1;
+        } else
+        if ((t[0][2].xturn && t[1][2].xturn && t[2][2].xturn) || (t[0][2].oturn && t[1][2].oturn && t[2][2].oturn)) {
+            if(t[1][0].xturn)
+                rtype = -1;
+            if(t[1][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[0][0].xturn && t[1][1].xturn && t[2][2].xturn) || (t[0][0].oturn && t[1][1].oturn && t[2][2].oturn)) {
+            if(t[0][0].xturn)
+                rtype = -1;
+            if(t[0][0].oturn)
+                rtype = 1;
+        } else
+        if ((t[0][2].xturn && t[1][1].xturn && t[2][0].xturn) || (t[0][2].oturn && t[1][1].oturn && t[2][0].oturn)) {
+            if(t[0][2].xturn)
+                rtype = -1;
+            if(t[0][2].oturn)
+                rtype = 1;
+        } else {
+            int num = 0;
+            for(int row = 0; row  < 3; row++) {
+                for(int col = 0; col < 3; col++) {
+                    if(t[row][col].oturn || t[row][col].xturn) {
+                        num++;
+                    }
+                }
+            }
+            if (num == 9) {
+                rtype = 0;
+            }
+        }
+        return rtype;
     }
     
     void winner() {

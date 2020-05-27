@@ -11,22 +11,57 @@ import javafx.geometry.Point2D;
  *
  * @author Edward Potapov
  */
-public class Minimax {
+public class Minimax { //algorithm adapted from the Coding Train
     public static Point2D choosing () { 
-        Random r = new Random();
+        int globalbest = -2;
         TheBoard.turnon[][] temp = TheBoard.board;
-        ArrayList<Point2D> num = new ArrayList<Point2D>();
-        //random bot used for a place holder for the time being
+        Point2D p = new Point2D(3,3);
         for(int row = 0; row  < 3; row++) {
             for(int col = 0; col < 3; col++) {
                 if(!temp[row][col].oturn && !temp[row][col].xturn) {
-                    num.add(new Point2D(row,col));
+                    temp[row][col].oturn = true;
+                    int c = algo(temp, true);
+                    temp[row][col].oturn = false;
+                    if (c > globalbest) {
+                        globalbest = c;
+                        p = new Point2D(row, col);
+                    }
                 }
             }
         }
-        if (num.size() > 0)
-            return num.get(r.nextInt(num.size()));
-        else
-            return new Point2D(3,3); 
+        return p;
+    }
+    static int algo(TheBoard.turnon[][] temp,boolean turn) {
+        Integer tboard = TheBoard.minimaxWinner(temp);
+        if (tboard != null) {
+            return tboard;
+        }
+        if(turn) {
+            int c = 2;
+            for(int row = 0; row  < 3; row++) {
+                for(int col = 0; col < 3; col++) {
+                    if(!temp[row][col].oturn && !temp[row][col].xturn) {
+                        temp[row][col].xturn = true;
+                        int current = algo(temp, false);
+                        temp[row][col].xturn = false;
+                        c = Math.min(current, c);
+                    }
+                }
+            }
+            return c;
+        } else {
+            int c = -2;
+            for(int row = 0; row  < 3; row++) {
+                for(int col = 0; col < 3; col++) {
+                    if(!temp[row][col].oturn && !temp[row][col].xturn) {
+                        temp[row][col].oturn = true;
+                        int current = algo(temp, true);
+                        temp[row][col].oturn = false;
+                        c = Math.max(current, c);
+                    }
+                }
+            }
+            return c;
+        }
     }
 }
