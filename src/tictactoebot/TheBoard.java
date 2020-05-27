@@ -39,8 +39,8 @@ public class TheBoard extends javax.swing.JFrame { //comment
         b7.setText("");
         b8.setText("");
         b9.setText("");
-        MiniMaxButton.setEnabled(false);
-        basicOrnot = false;
+        BasicBotButton.setEnabled(false);
+        basicOrnot = true;
         b1.setForeground(Color.black);
         b2.setForeground(Color.black);
         b3.setForeground(Color.black);
