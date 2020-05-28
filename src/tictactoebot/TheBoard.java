@@ -540,54 +540,39 @@ public class TheBoard extends javax.swing.JFrame { //comment
     
     static Integer minimaxWinner(turnon[][] t) {
         Integer rtype = null;
-        if ((t[0][0].xturn && t[0][1].xturn && t[0][2].xturn) || (t[0][0].oturn && t[0][1].oturn && t[0][2].oturn)) {
-            if(t[0][0].xturn)
-                rtype = -1;
-            if(t[0][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[1][0].xturn && t[1][1].xturn && t[1][2].xturn) || (t[1][0].oturn && t[1][1].oturn && t[1][2].oturn)) {
-            if(t[1][0].xturn)
-                rtype = -1;
-            if(t[1][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[2][0].xturn && t[2][1].xturn && t[2][2].xturn) || (t[2][0].oturn && t[2][1].oturn && t[2][2].oturn)) {
-            if(t[2][0].xturn)
-                rtype = -1;
-            if(t[2][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[0][0].xturn && t[1][0].xturn && t[2][0].xturn) || (t[0][0].oturn && t[1][0].oturn && t[2][0].oturn)) {
-            if(t[0][0].xturn)
-                rtype = -1;
-            if(t[0][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[0][1].xturn && t[1][1].xturn && t[2][1].xturn) || (t[0][1].oturn && t[1][1].oturn && t[2][1].oturn)) {
-            if(t[0][1].xturn)
-                rtype = -1;
-            if(t[0][1].oturn)
-                rtype = 1;
-        } else
-        if ((t[0][2].xturn && t[1][2].xturn && t[2][2].xturn) || (t[0][2].oturn && t[1][2].oturn && t[2][2].oturn)) {
-            if(t[1][0].xturn)
-                rtype = -1;
-            if(t[1][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[0][0].xturn && t[1][1].xturn && t[2][2].xturn) || (t[0][0].oturn && t[1][1].oturn && t[2][2].oturn)) {
-            if(t[0][0].xturn)
-                rtype = -1;
-            if(t[0][0].oturn)
-                rtype = 1;
-        } else
-        if ((t[0][2].xturn && t[1][1].xturn && t[2][0].xturn) || (t[0][2].oturn && t[1][1].oturn && t[2][0].oturn)) {
-            if(t[0][2].xturn)
-                rtype = -1;
-            if(t[0][2].oturn)
-                rtype = 1;
-        } else {
+        if (t[0][0].xturn && t[0][1].xturn && t[0][2].xturn)
+            rtype = -1;
+        else if ((t[0][0].oturn && t[0][1].oturn && t[0][2].oturn))
+            rtype = 1;
+        else if (t[1][0].xturn && t[1][1].xturn && t[1][2].xturn)
+            rtype = -1;
+        else if (t[1][0].oturn && t[1][1].oturn && t[1][2].oturn)
+            rtype = 1;
+        else if (t[2][0].xturn && t[2][1].xturn && t[2][2].xturn)
+            rtype = -1;
+        else if (t[2][0].oturn && t[2][1].oturn && t[2][2].oturn)
+            rtype = 1;
+        else if (t[0][0].xturn && t[1][0].xturn && t[2][0].xturn)
+            rtype = -1;
+        else if (t[0][0].oturn && t[1][0].oturn && t[2][0].oturn)
+            rtype = 1;
+        else if (t[0][1].xturn && t[1][1].xturn && t[2][1].xturn)
+            rtype = -1;
+        else if (t[0][1].oturn && t[1][1].oturn && t[2][1].oturn)
+            rtype = 1;
+        else if (t[0][2].xturn && t[1][2].xturn && t[2][2].xturn)
+            rtype = -1;
+        else if (t[0][2].oturn && t[1][2].oturn && t[2][2].oturn)
+            rtype = 1;
+        else if (t[0][0].xturn && t[1][1].xturn && t[2][2].xturn)
+            rtype = -1;
+        else if (t[0][0].oturn && t[1][1].oturn && t[2][2].oturn)
+            rtype = 1;
+        else if (t[0][2].xturn && t[1][1].xturn && t[2][0].xturn)
+            rtype = -1;
+        else if (t[0][2].oturn && t[1][1].oturn && t[2][0].oturn)
+            rtype = 1;
+        else {
             int num = 0;
             for(int row = 0; row  < 3; row++) {
                 for(int col = 0; col < 3; col++) {
